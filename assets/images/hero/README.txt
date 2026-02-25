@@ -1,0 +1,1 @@
+Sube aquí imágenes grandes para el inicio.

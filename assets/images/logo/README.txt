@@ -1,0 +1,1 @@
+Sube aquí el archivo de tu logo. Ejemplo: logo-control-x.png

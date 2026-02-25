@@ -1,0 +1,1 @@
+Sube aquí fotos de la empresa o el taller.
