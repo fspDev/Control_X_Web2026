@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { MotionConfig } from 'framer-motion';
 import Navigation from './components/Navigation';
+import ScrollLogo from './components/ScrollLogo';
 import Hero from './components/Hero';
 import About from './components/About';
+import Stats from './components/Stats';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
-import Clients from './components/Clients';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -29,20 +31,24 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full overflow-x-hidden">
-      <Navigation />
-      
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Clients />
-        <Contact />
-      </main>
+    <MotionConfig reducedMotion="user">
+      <div className="relative w-full overflow-x-hidden">
+        <Navigation />
 
-      <Footer />
-    </div>
+        <main>
+          <Hero />
+          <About />
+          <Stats />
+          <Services />
+          <Portfolio />
+          <Contact />
+        </main>
+
+        <Footer />
+        {/* Va al final para medir el inicio y el menú ya montados */}
+        <ScrollLogo />
+      </div>
+    </MotionConfig>
   );
 };
 

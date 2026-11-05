@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { IMAGES, getImg } from '../src/constants/images';
+import { IMAGES } from '../src/constants/images';
+import { logoScrollRange, NAV_SOLID_AT } from './ScrollLogo';
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
 
-  // Calculate logo source based on current theme state
-  const logoSrc = isDark ? IMAGES.logo.dark : IMAGES.logo.light;
-
   useEffect(() => {
     // Check initial state from HTML class
     setIsDark(document.documentElement.classList.contains('dark'));
 
+    // El fondo del menú aparece cuando el logo animado ya casi llegó a su lugar
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > logoScrollRange() * NAV_SOLID_AT);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -32,16 +32,11 @@ const Navigation: React.FC = () => {
     }
   };
 
-  const handleLogoError = () => {
-    // Error handling if needed
-  };
-
   const navLinks = [
     { name: 'Inicio', href: '#hero' },
     { name: 'Empresa', href: '#about' },
     { name: 'Servicios', href: '#services' },
     { name: 'Casos', href: '#portfolio' },
-    { name: 'Clientes', href: '#clients' },
     { name: 'Contacto', href: '#contact' },
   ];
 
@@ -49,27 +44,18 @@ const Navigation: React.FC = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ease-in-out ${isScrolled
-          ? 'bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md py-4 shadow-sm'
-          : 'bg-transparent py-6'
+          ? 'bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md h-16 shadow-sm'
+          : 'bg-transparent h-24'
           }`}
       >
-        <div className="container mx-auto px-6 flex items-center">
-          <AnimatePresence>
-            {isScrolled && (
-              <a href="#hero" className="z-50 block outline-none focus:outline-none">
-                <motion.img
-                  src={logoSrc}
-                  alt={IMAGES.logo.alt}
-                  onError={handleLogoError}
-                  initial={{ opacity: 0, scale: 0.8, x: -20 }}
-                  animate={{ opacity: 1, scale: 1, x: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, x: -20 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="h-10 md:h-12 w-auto object-contain cursor-pointer"
-                />
-              </a>
-            )}
-          </AnimatePresence>
+        <div className="container mx-auto px-6 h-full flex items-center">
+          {/* Lugar del logo compacto: el logo lo dibuja ScrollLogo, que viaja hasta acá al hacer scroll */}
+          <a
+            id="nav-logo-anchor"
+            href="#hero"
+            aria-label={`${IMAGES.logo.alt} - volver al inicio`}
+            className="z-50 block flex-shrink-0 h-[30px] w-[168px] md:h-[38px] md:w-[213px] outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+          />
 
           {/* Desktop Menu - Always Pushed to the Right */}
           <div className="hidden md:flex items-center space-x-8 ml-auto">
