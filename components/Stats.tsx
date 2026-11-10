@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { animate, motion, useInView, useReducedMotion } from 'framer-motion';
+import { animate, motion, useInView } from 'framer-motion';
+import SectionTitle from './SectionTitle';
 
 interface Stat {
   value: number;
@@ -23,7 +24,7 @@ const Counter: React.FC<{ stat: Stat; delay: number }> = ({ stat, delay }) => {
   const ref = useRef<HTMLSpanElement>(null);
   // Solo recortamos abajo: con margen en los costados, los números angostos de la izquierda nunca "entraban"
   const inView = useInView(ref, { once: true, margin: '0px 0px -80px 0px' });
-  const reduce = useReducedMotion();
+  const reduce = false; // la web anima siempre (ver App.tsx)
   const [n, setN] = useState(0);
 
   useEffect(() => {
@@ -51,7 +52,7 @@ const Counter: React.FC<{ stat: Stat; delay: number }> = ({ stat, delay }) => {
 };
 
 const Stats: React.FC = () => (
-  <section id="cifras" className="relative overflow-hidden bg-brand-dark py-20 text-white md:py-28">
+  <section id="cifras" className="relative overflow-hidden bg-brand-dark py-24 text-white">
     {/* X gigante de fondo */}
     <svg
       aria-hidden
@@ -62,31 +63,26 @@ const Stats: React.FC = () => (
     </svg>
 
     <div className="container relative mx-auto px-6">
-      <div className="flex flex-col gap-12 md:flex-row md:gap-16">
-        <div className="md:w-10 md:flex-shrink-0">
-          <h2 className="border-l-2 border-brand-orange pl-3 text-xs font-bold uppercase tracking-[0.32em] text-white/80 md:[writing-mode:vertical-rl] md:rotate-180 md:border-l-0 md:border-r-2 md:pl-0 md:pr-3 md:py-1">
-            Control X en cifras
-          </h2>
-        </div>
+      {/* Mismo encabezado y misma línea izquierda que el resto de las secciones */}
+      <SectionTitle subtitle="Trayectoria" title="Números que nos respaldan" dark />
 
-        <div className="grid flex-1 grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-5 md:gap-x-4 lg:gap-x-6">
-          {STATS.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '0px 0px -80px 0px' }}
-              transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="border-t border-white/15 pt-6"
-            >
-              {/* En celular 2 columnas; desde tablet las 5 cifras en una sola fila, con el tamaño ajustado al ancho */}
-              <div className="whitespace-nowrap text-[clamp(1.5rem,8vw,2.25rem)] font-extrabold leading-none tracking-tighter md:text-[clamp(1.4rem,2.9vw,3.5rem)]">
-                <Counter stat={s} delay={i * 0.1} />
-              </div>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/60">{s.label}</p>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-5 md:gap-x-4 lg:gap-x-8">
+        {STATS.map((s, i) => (
+          <motion.div
+            key={s.label}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '0px 0px -80px 0px' }}
+            transition={{ duration: 0.7, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="border-t border-white/15 pt-6 last:col-span-2 md:last:col-span-1"
+          >
+            {/* En celular 2 columnas; desde tablet las 5 cifras en una sola fila, con el tamaño ajustado al ancho */}
+            <div className="whitespace-nowrap text-[clamp(1.5rem,8vw,2.25rem)] font-extrabold leading-none tracking-tighter md:text-[clamp(1.4rem,2.9vw,3.5rem)]">
+              <Counter stat={s} delay={i * 0.1} />
+            </div>
+            <p className="mt-3 text-xs font-semibold uppercase leading-snug tracking-[0.18em] text-white/60">{s.label}</p>
+          </motion.div>
+        ))}
       </div>
     </div>
   </section>

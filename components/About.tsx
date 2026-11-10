@@ -5,7 +5,7 @@ import SectionTitle from './SectionTitle';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 md:py-32 bg-white dark:bg-brand-dark text-brand-dark dark:text-white transition-colors duration-300">
+    <section id="about" className="py-24 bg-white dark:bg-brand-dark text-brand-dark dark:text-white transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -35,9 +35,10 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[400px] md:h-[500px] w-full"
+            className="relative h-[400px] md:h-[500px] w-full pr-4 pb-4"
           >
-             <div className="absolute inset-0 bg-brand-dark dark:bg-zinc-800 translate-x-4 translate-y-4 transition-colors duration-300"></div>
+             {/* El bloque de sombra queda dentro del ancho del contenido (antes se salía 16px a la derecha) */}
+             <div className="absolute left-4 top-4 right-0 bottom-0 bg-brand-dark dark:bg-zinc-800 transition-colors duration-300"></div>
              <img 
                src={getImg(IMAGES.about.workspace)} 
                alt={IMAGES.about.workspace.alt}

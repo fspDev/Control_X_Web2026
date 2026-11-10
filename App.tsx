@@ -30,8 +30,9 @@ const App: React.FC = () => {
     );
   }
 
+  // La web anima siempre, aunque el equipo pida reducir movimiento (pedido del cliente)
   return (
-    <MotionConfig reducedMotion="user">
+    <MotionConfig reducedMotion="never">
       <div className="relative w-full overflow-x-hidden">
         <Navigation />
 

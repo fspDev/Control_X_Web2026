@@ -36,7 +36,7 @@ const Navigation: React.FC = () => {
     { name: 'Inicio', href: '#hero' },
     { name: 'Empresa', href: '#about' },
     { name: 'Servicios', href: '#services' },
-    { name: 'Casos', href: '#portfolio' },
+    { name: 'Proyectos', href: '#portfolio' },
     { name: 'Contacto', href: '#contact' },
   ];
 
@@ -58,7 +58,7 @@ const Navigation: React.FC = () => {
           />
 
           {/* Desktop Menu - Always Pushed to the Right */}
-          <div className="hidden md:flex items-center space-x-8 ml-auto">
+          <div className="hidden lg:flex items-center space-x-8 ml-auto">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -84,10 +84,10 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Mobile Toggle Group - Always Pushed to the Right */}
-          <div className="flex items-center gap-4 md:hidden z-50 ml-auto">
+          <div className="flex items-center gap-4 lg:hidden z-50 ml-auto">
             <button
               onClick={toggleTheme}
-              className={`p-2 rounded-full transition-colors md:hidden ${isScrolled
+              className={`p-2 rounded-full transition-colors lg:hidden ${isScrolled
                 ? 'text-brand-dark dark:text-white'
                 : 'text-white'
                 }`}
@@ -117,7 +117,7 @@ const Navigation: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "tween", duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-brand-dark flex flex-col justify-center items-center md:hidden"
+            className="fixed inset-0 z-40 bg-brand-dark flex flex-col justify-center items-center lg:hidden"
           >
             {navLinks.map((link) => (
               <a

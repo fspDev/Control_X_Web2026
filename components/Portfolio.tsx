@@ -37,10 +37,11 @@ const Portfolio: React.FC = () => {
   return (
     <section id="portfolio" className="py-24 bg-white dark:bg-brand-dark transition-colors duration-300">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16">
-          <SectionTitle 
+        {/* El margen inferior lo pone este contenedor, así el botón queda alineado con la base del título */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16 md:mb-24 [&>div]:mb-0">
+          <SectionTitle
             subtitle="Nuestro Trabajo"
-            title="Casos de Éxito"
+            title="Nuestros proyectos"
           />
           <a 
             href="https://instagram.com" 
@@ -61,9 +62,10 @@ const Portfolio: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
               onClick={() => openProject(project)}
-              className={`group relative overflow-hidden cursor-pointer ${index === 1 || index === 4 ? 'lg:col-span-2' : ''}`}
+              className={`group relative overflow-hidden cursor-pointer ${index === 0 || index === 3 || index === 4 ? 'lg:col-span-2' : ''}`}
             >
-              <div className="aspect-[4/3] w-full h-full overflow-hidden">
+              {/* Filas de 2+1, 1+2 y 2+1 columnas: la grilla queda completa, sin huecos, y todas las filas miden lo mismo */}
+              <div className="h-72 w-full md:h-80 lg:h-[26rem] overflow-hidden">
                 <img
                   src={getImg(project)}
                   alt={project.title}
