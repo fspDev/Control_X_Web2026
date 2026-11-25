@@ -35,14 +35,16 @@ const About: React.FC = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[400px] md:h-[500px] w-full pr-4 pb-4"
+            className="relative w-full max-w-[480px] justify-self-center md:justify-self-end"
           >
-             {/* El bloque de sombra queda dentro del ancho del contenido (antes se salía 16px a la derecha) */}
-             <div className="absolute left-4 top-4 right-0 bottom-0 bg-brand-dark dark:bg-zinc-800 transition-colors duration-300"></div>
-             <img 
-               src={getImg(IMAGES.about.workspace)} 
+             {/* Lámina vertical (3:4), entera y a color. Su fondo es #111111, el mismo negro de la web, así se funde con la sección */}
+             <img
+               src={getImg(IMAGES.about.workspace)}
                alt={IMAGES.about.workspace.alt}
-               className="relative w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+               width={896}
+               height={1200}
+               loading="lazy"
+               className="relative block h-auto w-full"
              />
           </motion.div>
         </div>

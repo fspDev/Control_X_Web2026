@@ -34,80 +34,47 @@ export const IMAGES = {
   } satisfies Record<string, HeroImage>,
   about: {
     workspace: {
+      // Lámina de bocetos de un stand (generada con IA a partir de una foto de un stand de Control X)
+      local: `${BASE}assets/images/about/boceto-stand.jpg`,
       remote: "https://picsum.photos/id/600/800/800",
-      // local: `${BASE}assets/images/about/taller.jpg`,
-      alt: "Taller de Control-X",
+      alt: "Lámina de bocetos de un stand de Control X: vista general, uniones de la estructura, mostrador, cartel y panel con sus encastres",
     },
   },
-  portfolio: [
-    {
-      id: 1,
-      title: "Stand Tecnológico",
-      category: "Stands",
-      remote: "https://picsum.photos/id/180/600/800",
-      gallery: [
-        "https://picsum.photos/id/180/1200/800",
-        "https://picsum.photos/id/181/1200/800",
-        "https://picsum.photos/id/182/1200/800",
-      ]
-    },
-    {
-      id: 2,
-      title: "Showroom Automotriz",
-      category: "Showrooms",
-      remote: "https://picsum.photos/id/133/800/600",
-      gallery: [
-        "https://picsum.photos/id/133/1200/800",
-        "https://picsum.photos/id/134/1200/800",
-        "https://picsum.photos/id/135/1200/800",
-      ]
-    },
-    {
-      id: 3,
-      title: "Letras Corpóreas",
-      category: "Corpóreas",
-      remote: "https://picsum.photos/id/250/600/600",
-      gallery: [
-        "https://picsum.photos/id/250/1200/800",
-        "https://picsum.photos/id/251/1200/800",
-        "https://picsum.photos/id/252/1200/800",
-      ]
-    },
-    {
-      id: 4,
-      title: "Display POS",
-      category: "Material POP",
-      remote: "https://picsum.photos/id/366/600/800",
-      gallery: [
-        "https://picsum.photos/id/366/1200/800",
-        "https://picsum.photos/id/367/1200/800",
-        "https://picsum.photos/id/368/1200/800",
-      ]
-    },
-    {
-      id: 5,
-      title: "Escenografía TV",
-      category: "Escenografías",
-      remote: "https://picsum.photos/id/450/800/600",
-      gallery: [
-        "https://picsum.photos/id/450/1200/800",
-        "https://picsum.photos/id/451/1200/800",
-        "https://picsum.photos/id/452/1200/800",
-      ]
-    },
-    {
-      id: 6,
-      title: "Grabado Láser",
-      category: "Routeados",
-      remote: "https://picsum.photos/id/531/600/600",
-      gallery: [
-        "https://picsum.photos/id/531/1200/800",
-        "https://picsum.photos/id/532/1200/800",
-        "https://picsum.photos/id/533/1200/800",
-      ]
-    },
-  ],
 };
+
+export interface Project {
+  src: string;
+  /** Tamaño real de la foto optimizada: el carrusel respeta su proporción. */
+  w: number;
+  h: number;
+  client: string;
+  kind: string;
+}
+
+// Selección de E:\FOTOS\WEB (una foto por proyecto, stands terminados), optimizada a 1600 px.
+const P = (file: string, w: number, h: number, client: string, kind: string): Project => ({
+  src: `${BASE}assets/images/proyectos/${file}.jpg`,
+  w,
+  h,
+  client,
+  kind,
+});
+
+export const PROJECTS: Project[] = [
+  P('johnnie-walker', 960, 1280, 'Johnnie Walker', 'Estructura con pantallas LED'),
+  P('csh', 1600, 1205, 'CSH', 'Stand'),
+  P('tecnoimagen', 1600, 1205, 'Tecnoimagen', 'Stand'),
+  P('neodent', 960, 1280, 'Neodent', 'Stand'),
+  P('aaoc-oncologia', 1156, 867, 'AAOC · Congreso de Oncología Clínica 2025', 'Corpóreo iluminado'),
+  P('communication-partner', 1280, 963, 'Communication Partner', 'Stand'),
+  P('astrazeneca', 960, 1280, 'AstraZeneca', 'Stand'),
+  P('covidex', 1600, 1200, 'Covidex', 'Stand'),
+  P('vetanco', 1600, 1200, 'Vetanco', 'Stand'),
+  P('nutrifarms', 1200, 1600, 'Nutrifarms', 'Stand'),
+  P('eczane', 1600, 1200, 'Laboratorio Eczane', 'Stand'),
+  P('brox', 1600, 900, 'Brox', 'Espacio de marca'),
+  P('aaoc-acreditaciones', 1600, 900, 'AAOC · Post Chicago 2026', 'Acreditaciones'),
+];
 
 // Helper para obtener la url activa
 export const getImg = (imgObj: any) => {
