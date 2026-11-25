@@ -25,7 +25,9 @@ const Counter: React.FC<{ stat: Stat; delay: number }> = ({ stat, delay }) => {
   // Solo recortamos abajo: con margen en los costados, los números angostos de la izquierda nunca "entraban"
   const inView = useInView(ref, { once: true, margin: '0px 0px -80px 0px' });
   const reduce = false; // la web anima siempre (ver App.tsx)
-  const [n, setN] = useState(0);
+  // Arranca en el valor final: así el número correcto queda en el HTML (buscadores e IAs).
+  // La cuenta desde cero empieza recién cuando la cifra aparece en pantalla.
+  const [n, setN] = useState(stat.value);
 
   useEffect(() => {
     if (!inView) return;
@@ -33,6 +35,7 @@ const Counter: React.FC<{ stat: Stat; delay: number }> = ({ stat, delay }) => {
       setN(stat.value);
       return;
     }
+    setN(0);
     const controls = animate(0, stat.value, {
       duration: 2,
       delay,

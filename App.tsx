@@ -10,11 +10,12 @@ import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-const App: React.FC = () => {
+const App: React.FC<{ skipIntro?: boolean }> = ({ skipIntro = false }) => {
   // A simple loading state to simulate a smooth entry
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!skipIntro);
 
   useEffect(() => {
+    if (!loading) return;
     const timer = setTimeout(() => setLoading(false), 800);
     return () => clearTimeout(timer);
   }, []);

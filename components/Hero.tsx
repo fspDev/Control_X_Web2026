@@ -345,7 +345,7 @@ const Hero: React.FC = () => {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-gradient-to-b from-black/60 to-transparent" />
 
       <div className="container relative z-10 mx-auto flex h-full flex-col px-6 pb-8 pt-28 md:pb-10 md:pt-32">
-        <h1 className="sr-only">Control X — Creemos en el potencial de una idea</h1>
+        <h1 className="sr-only">Control X: diseño y construcción de stands para ferias, exhibidores, material POP y escenografías en Córdoba, Argentina</h1>
 
         {/* Lugar que ocupa el logo grande; el logo real lo dibuja ScrollLogo y se transforma al hacer scroll */}
         <div id="hero-logo-anchor" aria-hidden className="aspect-[953/255] w-[min(84vw,620px)]" />

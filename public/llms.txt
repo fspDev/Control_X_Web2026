@@ -1,0 +1,32 @@
+# Control X
+
+> Control X es una empresa de Córdoba, Argentina, con más de 20 años de experiencia en soluciones integrales para la industria publicitaria. Diseña y fabrica stands para ferias, congresos y eventos, exhibidores, material POP y escenografías, con diseño propio, fabricación con tecnología de vanguardia e instalación con cobertura nacional.
+
+Lema: "Creemos en el potencial de una idea."
+
+## Qué hace
+
+- **Diseño y construcción de stands**: stands de impacto para ferias, congresos y exposiciones. Acompaña cada proyecto de principio a fin, desde la idea hasta la instalación final.
+- **Material POP**: publicidad estratégica para el punto de venta.
+- **Exhibidores**: mobiliario y exhibidores para destacar productos.
+- **Escenografías**: ambientaciones temáticas para eventos y televisión.
+
+## Cómo trabaja
+
+- Diseño propio y fabricación con tecnología de vanguardia.
+- Acompañamiento de cada proyecto de principio a fin: idea, diseño, fabricación e instalación.
+- Cobertura nacional: trabaja en ferias, congresos y eventos de toda Argentina.
+
+## Contacto
+
+- Dirección: Laprida 2790, Alto Alberdi, Córdoba, Argentina
+- Teléfono y WhatsApp: +54 351 488-8756
+- Email: info@control-x.com.ar
+- Sitio web: https://fspdev.github.io/Control_X_Web2026/
+
+## Páginas
+
+- [Inicio](https://fspdev.github.io/Control_X_Web2026/): presentación, servicios, proyectos realizados y contacto.
+- [Servicios](https://fspdev.github.io/Control_X_Web2026/#services): las cuatro soluciones, con figuras animadas que explican cada una.
+- [Proyectos](https://fspdev.github.io/Control_X_Web2026/#portfolio): fotos de stands terminados.
+- [Contacto](https://fspdev.github.io/Control_X_Web2026/#contact): datos de contacto y formulario.

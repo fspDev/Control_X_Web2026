@@ -116,7 +116,7 @@ const Portfolio: React.FC = () => {
       <div className="container mx-auto px-6">
         {/* El margen inferior lo pone este contenedor, así el botón queda alineado con la base del título */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12 md:mb-16 [&>div]:mb-0">
-          <SectionTitle subtitle="Nuestro Trabajo" title="Nuestros proyectos" />
+          <SectionTitle subtitle="Portfolio" title="Nuestros proyectos" />
           <a
             href="https://instagram.com"
             target="_blank"
@@ -183,7 +183,7 @@ const Portfolio: React.FC = () => {
               >
                 <motion.img
                   src={p.src}
-                  alt={`Proyecto de Control X ${(i % N) + 1} de ${N}`}
+                  alt={`${p.kind} realizado por Control X`}
                   draggable={false}
                   loading={Math.abs(i - pos) <= 3 ? 'eager' : 'lazy'}
                   decoding="async"
@@ -285,7 +285,7 @@ const Portfolio: React.FC = () => {
                 className="flex max-h-full flex-col items-center"
                 onClick={(e) => e.stopPropagation()}
               >
-                <img src={PROJECTS[lightbox].src} alt={`Proyecto de Control X ${lightbox + 1} de ${N}`} className="max-h-[80vh] w-auto max-w-full object-contain" style={{ filter: ON }} />
+                <img src={PROJECTS[lightbox].src} alt={`${PROJECTS[lightbox].kind} realizado por Control X`} className="max-h-[80vh] w-auto max-w-full object-contain" style={{ filter: ON }} />
                 <figcaption className="mt-5 flex w-full justify-end text-white">
                   <span className="font-mono text-sm text-white/50">
                     {String(lightbox + 1).padStart(2, '0')} / {String(N).padStart(2, '0')}

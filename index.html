@@ -1,13 +1,154 @@
 <!doctype html>
-<html lang="es" class="scroll-smooth dark">
+<html lang="es-AR" class="scroll-smooth dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Control-X | Diseño y Comunicación Visual</title>
-    <meta
-      name="description"
-      content="Diseño y fabricación de stands, exhibidores, material POP y escenografías. Más de 20 años de experiencia."
-    />
+    <!-- SEO: la URL pública está fija acá; si se usa un dominio propio, cambiarla en canonical, og:url, og:image y en los datos estructurados -->
+    <title>Control X | Stands para ferias, exhibidores y material POP en Córdoba</title>
+    <meta name="description" content="Diseño y construcción de stands para ferias, exhibidores, material POP y escenografías. Más de 20 años en Córdoba, con cobertura en toda Argentina." />
+    <link rel="canonical" href="https://fspdev.github.io/Control_X_Web2026/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#111111" />
+    <meta name="geo.region" content="AR-X" />
+    <meta name="geo.placename" content="Córdoba, Argentina" />
+
+    <!-- Vista previa al compartir (WhatsApp, LinkedIn, Facebook, X) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="Control X" />
+    <meta property="og:title" content="Control X | Stands, exhibidores, material POP y escenografías" />
+    <meta property="og:description" content="Diseño y construcción de stands para ferias, exhibidores, material POP y escenografías. Más de 20 años en Córdoba, con cobertura en toda Argentina." />
+    <meta property="og:url" content="https://fspdev.github.io/Control_X_Web2026/" />
+    <meta property="og:image" content="https://fspdev.github.io/Control_X_Web2026/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Control X: bocetos de un stand con cartel de marca" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Control X | Stands, exhibidores, material POP y escenografías" />
+    <meta name="twitter:description" content="Diseño y construcción de stands para ferias, exhibidores, material POP y escenografías. Más de 20 años en Córdoba, con cobertura en toda Argentina." />
+    <meta name="twitter:image" content="https://fspdev.github.io/Control_X_Web2026/og-image.jpg" />
+
+    <link rel="icon" type="image/png" href="%BASE_URL%favicon.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%favicon.png" />
+    <link rel="alternate" type="text/plain" title="Resumen para IAs" href="%BASE_URL%llms.txt" />
+    <link rel="preload" as="image" href="%BASE_URL%assets/images/hero/hero-01.jpg" fetchpriority="high" />
+
+    <!-- Datos estructurados: quiénes somos, dónde estamos y qué hacemos (los leen Google y las IAs) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": [
+              "Organization",
+              "LocalBusiness"
+            ],
+            "@id": "https://fspdev.github.io/Control_X_Web2026/#empresa",
+            "name": "Control X",
+            "alternateName": "Control-X",
+            "url": "https://fspdev.github.io/Control_X_Web2026/",
+            "logo": "https://fspdev.github.io/Control_X_Web2026/assets/images/logo/logo2.png",
+            "image": "https://fspdev.github.io/Control_X_Web2026/og-image.jpg",
+            "slogan": "Creemos en el potencial de una idea.",
+            "description": "Empresa con más de 20 años de experiencia en soluciones integrales para la industria publicitaria: diseño y fabricación de stands para ferias, congresos y eventos, exhibidores, material POP y escenografías, con diseño propio, fabricación con tecnología de vanguardia e instalación con cobertura nacional.",
+            "email": "info@control-x.com.ar",
+            "telephone": "+54 351 488-8756",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Laprida 2790, Alto Alberdi",
+              "addressLocality": "Córdoba",
+              "addressRegion": "Córdoba",
+              "addressCountry": "AR"
+            },
+            "hasMap": "https://maps.google.com/maps?q=Laprida+2790,+Alto+Alberdi,+Córdoba,+Argentina",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Argentina"
+            },
+            "knowsAbout": [
+              "Diseño de stands",
+              "Construcción de stands para ferias y exposiciones",
+              "Material POP",
+              "Exhibidores para punto de venta",
+              "Escenografías para eventos y TV",
+              "Señalética y corpóreos iluminados"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "ventas",
+              "telephone": "+54 351 488-8756",
+              "email": "info@control-x.com.ar",
+              "areaServed": "AR",
+              "availableLanguage": "es"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Soluciones",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Diseño y construcción de stands",
+                    "description": "Stands de impacto para ferias, congresos y exposiciones, desde el diseño hasta la instalación final.",
+                    "areaServed": "AR",
+                    "provider": {
+                      "@id": "https://fspdev.github.io/Control_X_Web2026/#empresa"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Material POP",
+                    "description": "Publicidad estratégica para el punto de venta.",
+                    "areaServed": "AR",
+                    "provider": {
+                      "@id": "https://fspdev.github.io/Control_X_Web2026/#empresa"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Exhibidores",
+                    "description": "Mobiliario y exhibidores para destacar productos.",
+                    "areaServed": "AR",
+                    "provider": {
+                      "@id": "https://fspdev.github.io/Control_X_Web2026/#empresa"
+                    }
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Escenografías",
+                    "description": "Ambientaciones temáticas para eventos y televisión.",
+                    "areaServed": "AR",
+                    "provider": {
+                      "@id": "https://fspdev.github.io/Control_X_Web2026/#empresa"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://fspdev.github.io/Control_X_Web2026/#sitio",
+            "url": "https://fspdev.github.io/Control_X_Web2026/",
+            "name": "Control X",
+            "inLanguage": "es-AR",
+            "publisher": {
+              "@id": "https://fspdev.github.io/Control_X_Web2026/#empresa"
+            }
+          }
+        ]
+      }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
