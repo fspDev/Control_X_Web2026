@@ -1,0 +1,32 @@
+# Control X: se permite el acceso a buscadores y a los rastreadores de IA.
+# Nota: robots.txt solo tiene efecto en la raíz del dominio. Mientras la web viva en
+# fspdev.github.io/Control_X_Web2026/, este archivo no se lee; empieza a funcionar con un dominio propio.
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://fspdev.github.io/Control_X_Web2026/sitemap.xml
